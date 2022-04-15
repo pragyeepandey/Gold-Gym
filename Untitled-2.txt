@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+class A
+{
+int a;
+public:
+virtual void show() { cout<< "\nBase a = "<<a; }
+
+};
+
+class B : public A
+{
+int b;
+public:
+
+void show() { cout<< "\n Derived 1 b = "<<b; }
+
+};
+
+class C : public A
+{
+int c;
+public:
+
+void show() { cout<< "\n Derived 2 c = "<<c; }
+
+};
+
+
+
+int main()
+{
+A *p;
+p= new B; // dynamic binding
+p->show();
+
+p= new C;
+p->show();
+
+delete p;
+
+return 0;
+}
